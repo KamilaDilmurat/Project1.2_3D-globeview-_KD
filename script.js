@@ -1,5 +1,5 @@
 require([
-        "esri/Map",
+        "esri/WebScene",
         "esri/views/SceneView",
         "esri/layers/Layer"
       ], function (Map, SceneView, Layer) {
@@ -8,14 +8,14 @@ require([
           ground: "world-elevation" 
         });
 
-        const view = new SceneView({
+       var view = new SceneView({
           map: map,
           container: "viewDiv",
          scale: 500000,
           center: [87.5, 43.8]
         });
 
-        const layer = Layer.fromPortalItem({
+        var layer = Layer.fromPortalItem({
           portalItem: {
             id: "2cdad2d703344d1fa2681bb5fb9fe221"
           }
@@ -23,7 +23,7 @@ require([
           .then(addLayer)
           .catch(rejection);
   
-  const layer = Layer.fromPortalItem({
+  var layer = Layer.fromPortalItem({
           portalItem: {
             id: "ec224b6e776c44ff8169d1f0fa27e5f2"
           }
